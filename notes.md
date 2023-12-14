@@ -15,10 +15,10 @@ variables called in GoLang must be used
 
 Basic syntax for declaring variables
 
-Longhand variable declaration
+# Longhand variable declaration
     var characterName string = "Victor"
 
-Shorthand variable declaration
+# Shorthand variable declaration
     characterAge := 21
 
 # Inputting in GoLang
