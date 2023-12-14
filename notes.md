@@ -1,11 +1,11 @@
 # GoLang Basic Structure
 
-package main
+    package main
 
-import "fmt"
+    import "fmt"
 
-func main() {
+    func main() {
 
     fmt.Println("Hello World!") 
     
-}
+    }
