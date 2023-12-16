@@ -16,6 +16,11 @@ func main() {
 	var userInput int
 	fmt.Println("Guess a Number between 1 - 100")
 	fmt.Scan(&userInput)
+	guessingGame(guessingNumber, numberOfGuesses, userInput)
+
+}
+
+func guessingGame(guessingNumber int, numberOfGuesses int, userInput int ){
 
 	for userInput != guessingNumber {
 		if numberOfGuesses > 1 && math.Abs(float64(userInput-guessingNumber)) <= 25 {
@@ -23,12 +28,12 @@ func main() {
 			numberOfGuesses--
 			fmt.Println("number of guesses: ", numberOfGuesses)
 			fmt.Scan(&userInput)
-		} else if numberOfGuesses > 0 && math.Abs(float64(userInput-guessingNumber)) > 25 {
+		} else if numberOfGuesses > 1 && math.Abs(float64(userInput-guessingNumber)) > 25 {
 			fmt.Println("Very cold")
 			numberOfGuesses--
 			fmt.Println("number of guesses: ", numberOfGuesses)
 			fmt.Scan(&userInput)
-		} else if numberOfGuesses > 0 && userInput == guessingNumber {
+		} else if numberOfGuesses > 1 && userInput == guessingNumber {
 			break
 		} else {
 			fmt.Println("You lost")
@@ -38,4 +43,5 @@ func main() {
 	}
 
 	fmt.Println("You won!")
+
 }
