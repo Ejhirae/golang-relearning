@@ -36,3 +36,5 @@ Shorthand variable declaration
     for{
         fmt.Println(true)
     }
+
+# Variables in GoLang
