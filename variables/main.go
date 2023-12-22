@@ -14,7 +14,8 @@ func main() {
 	guessingNumber := rand.Intn(98) + 2
 	numberOfGuesses := 3
 	var userInput int
-	fmt.Println("Guess a Number between 1 - 100")
+	fmt.Println("Guess my number, you have 3 guesses")
+	fmt.Println("If the difference between guessed number and actual number is in the range of 1 - 25 then you are getting closer, else you are far away")
 	fmt.Scan(&userInput)
 	guessingGame(guessingNumber, numberOfGuesses, userInput)
 

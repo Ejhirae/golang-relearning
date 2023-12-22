@@ -38,3 +38,5 @@ Shorthand variable declaration
     }
 
 # Variables in GoLang
+    var Publicvariable = "public access or exported"
+    var privateVariable = "private access"
