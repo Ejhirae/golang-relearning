@@ -40,3 +40,53 @@ Shorthand variable declaration
 # Variables in GoLang
     var Publicvariable = "public access or exported"
     var privateVariable = "private access"
+
+* Quick Note
+
+    -defer keyword delays whatever that follows it until the current function it is placed in ends.
+
+    -anonymous fucntions are functions without a name. They can be depicted as:
+
+        func(){
+        fmt.Println("I am an anonymous function")
+        }()
+
+# Using a 3rd party function to read keyboard presses
+
+    package main
+
+    import (
+    	"fmt"
+    	"log"
+
+    	"github.com/eiannone/keyboard"
+    )
+
+    //Using the keyboard 3rd party package
+
+    func main() {
+    	err := keyboard.Open()
+
+    	checkError(err)
+
+    	// using defer to close the keyboard package
+    	defer func() {
+    		_ = keyboard.Close()
+    	}()
+
+    fmt.Println("Press any key to start. ESC to quit.")
+    
+    for{
+    	char, key, err := keyboard.GetSingleKey()
+    	checkError(err)
+    	if key != 0{
+    		fmt.Println("You pressed", char, key)
+    	}else{
+    		fmt.Println("You pressed",char)
+    	}	
+    	if key == keyboard.KeyEsc{
+    		break
+        }
+    }
+
+    fmt.Println("End of program. Goodbye!")
